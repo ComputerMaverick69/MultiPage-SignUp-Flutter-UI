@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
@@ -8,9 +8,11 @@ import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
 import 'package:signupui/widgets/button.dart';
 
+import '../constants/strings.dart';
+
 class SignUpPage extends StatelessWidget {
-  final Widget happyFriendsSvg =
-      SvgPicture.asset('assets/images/friends.svg', semanticsLabel: '');
+//  final Widget happyFriendsSvg =
+//      SvgPicture.asset('assets/images/friends.svg', semanticsLabel: '');
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class SignUpPage extends StatelessWidget {
                   ),
                   ButtonWidget(
                     onTap: () {
-                      Navigator.pushNamed(context, passwordPage);
+                      Navigator.pushNamed(context, emailPage);
                     },
                     buttonColor: emailButtonColor,
                     buttonChildren: [

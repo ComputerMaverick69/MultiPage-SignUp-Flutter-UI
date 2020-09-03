@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
 import 'package:signupui/constants/strings.dart';
@@ -8,8 +8,8 @@ import 'package:signupui/constants/styles.dart';
 import 'package:signupui/widgets/button.dart';
 
 class PasswordPage extends StatelessWidget {
-  final Widget svg =
-      SvgPicture.asset('assets/images/together.svg', semanticsLabel: '');
+//  final Widget svg =
+//      SvgPicture.asset('assets/images/together.svg', semanticsLabel: '');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,7 @@ class PasswordPage extends StatelessWidget {
               ),
               Container(
                 height: 200,
-                child: svg,
+//                child: svg,
               ),
               SizedBox(
                 height: 10,
