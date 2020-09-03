@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:signupui/first_page.dart';
+import 'package:signupui/screens/4th_page.dart';
 
 void main() => runApp(SignUp());
 
@@ -12,7 +12,6 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstPage(),
-    );
+        routes: {FourthPage.id: (context) => FourthPage()}, home: FourthPage());
   }
 }
