@@ -1,98 +1,119 @@
 import 'package:flutter/material.dart';
+import 'package:signupui/constants/dimensions.dart';
+import 'package:signupui/constants/colors.dart';
+import 'package:signupui/constants/styles.dart';
+import 'package:signupui/widgets/button.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:signupui/constants/strings.dart';
 
 void main() => runApp(EmailPage());
 
 class EmailPage extends StatelessWidget {
+  final Widget svg =
+      SvgPicture.asset('assets/images/high_five.svg', semanticsLabel: '');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0XFFF2F5FA),
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Find your event neighbors',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 40.0,
-                  color: Color(0xFF172279),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(kpadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: kpadding + 40,
                 ),
-              ),
-              SizedBox(height: 30.0),
-              Image(
-                image: AssetImage('assets/images/signup.png'),
-                semanticLabel: 'Dash mascot',
-              ),
-              SizedBox(height: 40.0),
-              Text(
-                'And your email?',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Color(0xFF172279),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15.0,
-                ),
-              ),
-              SizedBox(height: 10),
-              TextField(
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
-                      color: Colors.indigo,
-                      width: 3,
-                    ),
+                Text(
+                  'Find your event neighbors',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 40.0,
+                    color: Color(0xFF172279),
                   ),
                 ),
-              ),
-              SizedBox(height: 30.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  FlatButton(
-                    textColor: Colors.black,
-                    onPressed: null,
-                    child: Text(
-                      'Back',
-                      style: TextStyle(
-                        color: Colors.deepPurple.shade800,
+                SizedBox(height: kpadding + 30),
+                Container(
+                  height: 200,
+                  child: svg,
+                ),
+                SizedBox(height: kpadding + 30),
+                Text(
+                  'And your email?',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: secondaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: kpadding - 10),
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                      borderSide: BorderSide(
+                        color: secondaryColor,
+                        width: 2.5,
+                      ),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
                       ),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        boxShadow: [new BoxShadow(
-                          color: Colors.grey[350],
-                          blurRadius: 20.0,
-                        ),]
-
-                    ),
-                    child: FlatButton(
-                      onPressed: () {},
+                ),
+                SizedBox(height: 30.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    FlatButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
-                      color: Colors.grey[300],
-                      child: Text(
-                        'Next',
-                        style: TextStyle(
-                          color: Colors.deepPurple.shade800,
-                          fontWeight: FontWeight.bold,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(
+                          'Back',
+                          style: kTextH5Style.copyWith(
+                            color: secondaryColor,
+                          ),
                         ),
                       ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                  ),
-                ],
-              )
-            ],
+                    ButtonWidget(
+                      buttonChildren: [
+                        Text(
+                          "Next",
+                          style: kTextH5Style.copyWith(
+                            color: secondaryColor,
+                          ),
+                        )
+                      ],
+                      buttonColor: Colors.white,
+                      onTap: () {
+                        Navigator.pushNamed(context, passwordPage);
+                      },
+                    ),
+                  ],
+                ),
+                SizedBox(height: kpadding)
+              ],
+            ),
           ),
         ),
       ),
     );
-
   }
 }

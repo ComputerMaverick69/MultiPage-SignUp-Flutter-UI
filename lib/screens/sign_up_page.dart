@@ -6,14 +6,12 @@ import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
 import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
+import 'package:signupui/screens/email_page.dart';
 import 'package:signupui/widgets/button.dart';
-
+import 'package:page_transition/page_transition.dart';
 import '../constants/strings.dart';
 
 class SignUpPage extends StatelessWidget {
-//  final Widget happyFriendsSvg =
-//      SvgPicture.asset('assets/images/friends.svg', semanticsLabel: '');
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
