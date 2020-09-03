@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:signupui/first_page.dart';
+import 'package:signupui/screens/first_page.dart';
 
 void main() => runApp(SignUp());
 
