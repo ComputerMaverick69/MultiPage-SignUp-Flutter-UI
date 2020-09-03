@@ -4,6 +4,7 @@ import 'package:signupui/constants/styles.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
+    this.onTap,
     this.textColor,
     this.buttonColor,
     this.buttonChildren,
@@ -14,6 +15,7 @@ class ButtonWidget extends StatelessWidget {
   final List<Widget> buttonChildren;
   final Color textColor;
   final IconData icon;
+  final Function onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,9 +23,9 @@ class ButtonWidget extends StatelessWidget {
         color: Colors.transparent,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 5,
-            blurRadius: 7,
+            color: secondaryColor.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 20,
             offset: Offset(0, 3), // changes position of shadow
           ),
         ],
@@ -33,7 +35,7 @@ class ButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         color: buttonColor,
-        onPressed: () {},
+        onPressed: onTap,
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Row(

@@ -8,7 +8,7 @@ import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
 import 'package:signupui/widgets/button.dart';
 
-class FirstPage extends StatelessWidget {
+class SignUpPage extends StatelessWidget {
   final Widget happyFriendsSvg =
       SvgPicture.asset('assets/images/friends.svg', semanticsLabel: '');
 
@@ -61,12 +61,12 @@ class FirstPage extends StatelessWidget {
                     height: ksignupPagePadding,
                   ),
                   ButtonWidget(
+                    onTap: () {},
                     buttonColor: googleButtonColor,
                     buttonChildren: [
                       Icon(
                         FontAwesomeIcons.google,
-                        color: Colors.white
-                        ,
+                        color: Colors.white,
                       ),
                       SizedBox(width: 20.0),
                       Text(
@@ -79,6 +79,9 @@ class FirstPage extends StatelessWidget {
                     height: ksignupPagePadding,
                   ),
                   ButtonWidget(
+                    onTap: () {
+                      Navigator.pushNamed(context, passwordPage);
+                    },
                     buttonColor: emailButtonColor,
                     buttonChildren: [
                       Text(
