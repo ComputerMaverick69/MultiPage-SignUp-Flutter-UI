@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+
 class FirstPage extends StatelessWidget {
   final Widget svg = SvgPicture.asset('assets/friends.svg', semanticsLabel: '');
   @override
