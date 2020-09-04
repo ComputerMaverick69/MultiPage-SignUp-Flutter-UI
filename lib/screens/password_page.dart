@@ -14,7 +14,7 @@ class PasswordPage extends StatefulWidget {
 
 class _PasswordPageState extends State<PasswordPage> {
   bool chars = false, num = false, upp = false;
-  final myController = TextEditingController();
+
   final Widget svg =
       SvgPicture.asset('assets/images/together.svg', semanticsLabel: '');
   @override
@@ -77,6 +77,8 @@ class _PasswordPageState extends State<PasswordPage> {
                         ],
                       ),
                       child: TextField(
+                        textAlign: TextAlign.center,
+                        obscureText: true,
                         onChanged: (text) {
                           if (text.contains(new RegExp(r'[A-Z]'))) {
                             upp = true;
@@ -96,7 +98,6 @@ class _PasswordPageState extends State<PasswordPage> {
                           }
                           setState(() {});
                         },
-                        controller: myController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -209,14 +210,16 @@ class _PasswordPageState extends State<PasswordPage> {
                         ButtonWidget(
                           buttonChildren: [
                             Text(
-                              "Next",
+                              "Submit",
                               style: kTextH5Style.copyWith(
                                 color: secondaryColor,
                               ),
                             )
                           ],
                           buttonColor: Colors.white,
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, completedPage);
+                          },
                         ),
                       ],
                     ),

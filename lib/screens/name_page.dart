@@ -49,6 +49,10 @@ class NamePage extends StatelessWidget {
                 ),
                 SizedBox(height: kpadding - 10),
                 TextField(
+                  onChanged: (name) {
+                    print(name);
+                  },
+                  textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,

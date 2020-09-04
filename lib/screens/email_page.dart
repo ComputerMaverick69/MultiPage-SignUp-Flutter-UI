@@ -51,6 +51,10 @@ class EmailPage extends StatelessWidget {
                 ),
                 SizedBox(height: kpadding - 10),
                 TextField(
+                  onChanged: (email) {
+                    print(email);
+                  },
+                  textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
