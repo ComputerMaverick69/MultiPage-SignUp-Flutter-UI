@@ -6,6 +6,6 @@ A simple signup page based on UI from dribble. Find UI [here](https://dribbble.c
 
 <p>
 
-![Screenshot](screenshots/signupscreenshot.png)
+![Screenshot](screenshots/signupscreenshots.png)
 
 </p>
