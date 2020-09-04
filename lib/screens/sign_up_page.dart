@@ -6,6 +6,7 @@ import 'package:signupui/constants/dimensions.dart';
 import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
 import 'package:signupui/widgets/button.dart';
+
 import '../constants/strings.dart';
 
 class SignUpPage extends StatelessWidget {

@@ -7,7 +7,14 @@ import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
 import 'package:signupui/widgets/button.dart';
 
-class PasswordPage extends StatelessWidget {
+class PasswordPage extends StatefulWidget {
+  @override
+  _PasswordPageState createState() => _PasswordPageState();
+}
+
+class _PasswordPageState extends State<PasswordPage> {
+  bool chars = false, num = false, upp = false;
+  final myController = TextEditingController();
   final Widget svg =
       SvgPicture.asset('assets/images/together.svg', semanticsLabel: '');
   @override
@@ -70,6 +77,26 @@ class PasswordPage extends StatelessWidget {
                         ],
                       ),
                       child: TextField(
+                        onChanged: (text) {
+                          if (text.contains(new RegExp(r'[A-Z]'))) {
+                            upp = true;
+                          } else {
+                            upp = false;
+                          }
+                          if (text.contains(new RegExp(r'[0-9]'))) {
+                            num = true;
+                          } else {
+                            num = false;
+                          }
+
+                          if (text.length > 6) {
+                            chars = true;
+                          } else {
+                            chars = false;
+                          }
+                          setState(() {});
+                        },
+                        controller: myController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -105,12 +132,56 @@ class PasswordPage extends StatelessWidget {
                     SizedBox(
                       height: kpasswordPagePadding,
                     ),
-                    Text(
-                      'At least 7 characters \nAt least 1 number \nAt least 1 upperCase',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: secondaryColor,
-                      ),
+                    Row(
+                      children: [
+                        chars
+                            ? Icon(
+                                Icons.done,
+                                color: Colors.green,
+                              )
+                            : Icon(Icons.close, color: Colors.red),
+                        Text(
+                          'At least 7 characters ',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: secondaryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        num
+                            ? Icon(
+                                Icons.done,
+                                color: Colors.green,
+                              )
+                            : Icon(Icons.close, color: Colors.red),
+                        Text(
+                          'At least 1 number ',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: secondaryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        upp
+                            ? Icon(
+                                Icons.done,
+                                color: Colors.green,
+                              )
+                            : Icon(Icons.close, color: Colors.red),
+                        Text(
+                          'At least 1 upperCase',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: secondaryColor,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 30,
