@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
+import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
-import 'package:signupui/screens/password_page.dart';
 import 'package:signupui/widgets/button.dart';
 
 void main() => runApp(EmailPage());
 
 class EmailPage extends StatelessWidget {
-  static const String id = "third";
   final Widget svg =
       SvgPicture.asset('assets/images/high_five.svg', semanticsLabel: '');
   @override
@@ -104,7 +103,7 @@ class EmailPage extends StatelessWidget {
                       ],
                       buttonColor: Colors.white,
                       onTap: () {
-                        Navigator.pushNamed(context, PasswordPage.id);
+                        Navigator.pushNamed(context, passwordPage);
                       },
                     ),
                   ],

@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import 'package:signupui/constants/colors.dart';
-import 'package:signupui/constants/styles.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({

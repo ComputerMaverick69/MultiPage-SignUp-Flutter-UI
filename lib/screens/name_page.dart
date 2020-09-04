@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
+import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
-import 'package:signupui/screens/email_page.dart';
 import 'package:signupui/widgets/button.dart';
 
-class SecondPage extends StatelessWidget {
-  static const String id = "second";
+class NamePage extends StatelessWidget {
   final Widget svg =
       SvgPicture.asset('assets/images/mobile_user.svg', semanticsLabel: '');
   @override
@@ -102,7 +101,7 @@ class SecondPage extends StatelessWidget {
                       ],
                       buttonColor: Colors.white,
                       onTap: () {
-                        Navigator.pushNamed(context, EmailPage.id);
+                        Navigator.pushNamed(context, emailPage);
                       },
                     ),
                   ],

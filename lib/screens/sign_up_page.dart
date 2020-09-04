@@ -5,13 +5,10 @@ import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
 import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
-import 'package:signupui/screens/secondpage.dart';
 import 'package:signupui/widgets/button.dart';
-
 import '../constants/strings.dart';
 
 class SignUpPage extends StatelessWidget {
-  static const String id = "first";
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -80,7 +77,7 @@ class SignUpPage extends StatelessWidget {
                   ),
                   ButtonWidget(
                     onTap: () {
-                      Navigator.pushNamed(context, emailPage);
+                      Navigator.pushNamed(context, namePage);
                     },
                     buttonColor: emailButtonColor,
                     buttonChildren: [
@@ -110,7 +107,7 @@ class SignUpPage extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, SecondPage.id);
+                          Navigator.pushNamed(context, namePage);
                         },
                         child: Text(
                           " Sign In",
