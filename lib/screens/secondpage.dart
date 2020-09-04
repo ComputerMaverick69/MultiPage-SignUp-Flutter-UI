@@ -3,15 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
 import 'package:signupui/constants/styles.dart';
-import 'package:signupui/screens/password_page.dart';
+import 'package:signupui/screens/email_page.dart';
 import 'package:signupui/widgets/button.dart';
 
-void main() => runApp(EmailPage());
-
-class EmailPage extends StatelessWidget {
-  static const String id = "third";
+class SecondPage extends StatelessWidget {
+  static const String id = "second";
   final Widget svg =
-      SvgPicture.asset('assets/images/high_five.svg', semanticsLabel: '');
+      SvgPicture.asset('assets/images/mobile_user.svg', semanticsLabel: '');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +26,7 @@ class EmailPage extends StatelessWidget {
                   height: kpadding + 40,
                 ),
                 Text(
-                  'Find your event neighbors',
+                  'Browse events near you',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
@@ -43,7 +41,7 @@ class EmailPage extends StatelessWidget {
                 ),
                 SizedBox(height: kpadding + 30),
                 Text(
-                  'And your email?',
+                  'Whats your name?',
                   style: TextStyle(
                     fontSize: 20,
                     color: secondaryColor,
@@ -104,7 +102,7 @@ class EmailPage extends StatelessWidget {
                       ],
                       buttonColor: Colors.white,
                       onTap: () {
-                        Navigator.pushNamed(context, PasswordPage.id);
+                        Navigator.pushNamed(context, EmailPage.id);
                       },
                     ),
                   ],

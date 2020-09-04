@@ -8,6 +8,7 @@ import 'package:signupui/constants/styles.dart';
 import 'package:signupui/widgets/button.dart';
 
 class PasswordPage extends StatelessWidget {
+  static const String id = "fourth";
   final Widget svg =
       SvgPicture.asset('assets/images/together.svg', semanticsLabel: '');
   @override

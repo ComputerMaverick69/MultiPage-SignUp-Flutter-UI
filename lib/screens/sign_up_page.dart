@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:signupui/constants/colors.dart';
 import 'package:signupui/constants/dimensions.dart';
 import 'package:signupui/constants/strings.dart';
 import 'package:signupui/constants/styles.dart';
-import 'package:signupui/screens/email_page.dart';
+import 'package:signupui/screens/secondpage.dart';
 import 'package:signupui/widgets/button.dart';
-import 'package:page_transition/page_transition.dart';
+
 import '../constants/strings.dart';
 
 class SignUpPage extends StatelessWidget {
+  static const String id = "first";
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -109,7 +109,9 @@ class SignUpPage extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, SecondPage.id);
+                        },
                         child: Text(
                           " Sign In",
                           style: kTextH5Style.copyWith(
